@@ -11,9 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140421013620) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "applications", force: true do |t|
+    t.string   "company"
+    t.string   "position"
+    t.date     "applied_on"
+    t.string   "refer"
+    t.date     "found_on"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

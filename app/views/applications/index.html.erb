@@ -1,0 +1,22 @@
+<h1>Listing applications</h1>
+ 
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Position</th>
+    <th>Applied On</th>
+    <th>Refer</th>
+    <th>Found On</th>
+  </tr>
+ 
+  <% @applications.each do |application| %>
+    <tr>
+      <td><%= application.company %></td>
+      <td><%= application.position %></td>
+      <td><%= application.applied_on %></td>
+      <td><%= application.refer %></td>
+      <td><%= application.found_on %></td>
+    </tr>
+  <% end %>
+</table>
+<p><%= link_to 'New application', new_application_path %></p>

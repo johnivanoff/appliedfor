@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company: MyString
+  position: MyString
+  applied_on: 2014-04-20
+  refer: MyString
+  found_on: 2014-04-20
+
+two:
+  company: MyString
+  position: MyString
+  applied_on: 2014-04-20
+  refer: MyString
+  found_on: 2014-04-20
