@@ -1,3 +1,3 @@
 class Application < ActiveRecord::Base
-  validates :company, presence: true
+  validates :company, :position, presence: true
 end
