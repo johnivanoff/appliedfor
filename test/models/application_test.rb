@@ -17,9 +17,7 @@ class ApplicationTest < ActiveSupport::TestCase
   end
   test "should not save application without position" do
     application = applications(:one)
-    puts 'application.position => ' + application.position
     application.position = nil
-    puts 'application.position => ' + application.position.to_s
     assert_not application.save
   end
 end
