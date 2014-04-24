@@ -1,25 +1,14 @@
 <p>
-  <strong>Company:</strong>
-  <%= @application.company %>
+  I applied at 
+  <strong><%= @application.company %></strong> 
+  for the <strong><%= @application.position %></strong> position on
+  <strong><%= @application.applied_on %></strong>
 </p>
-
+<% unless @application.refer.empty? %>
 <p>
-  <strong>Position:</strong>
-  <%= @application.position %>
+  I heard about it from 
+  <strong><%= @application.refer %></strong> on
+  <strong><%= @application.found_on %></strong>.
 </p>
-
-<p>
-  <strong>Applied on:</strong>
-  <%= @application.applied_on %>
-</p>
-
-<p>
-  <strong>Refer:</strong>
-  <%= @application.refer %>
-</p>
-
-<p>
-  <strong>Found on:</strong>
-  <%= @application.found_on %>
-</p>
+<% end %>
 <p><%= link_to 'Back', applications_path %></p>
