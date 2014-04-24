@@ -1,28 +1,17 @@
 <h1>New Application</h1>
 
-<%= form_for :application, url: applications_path do |f| %>
-  <p>
-    <%= f.label :company %><br>
-    <%= f.text_field :company %>
-  </p>
-  <p>
-    <%= f.label :position %><br>
-    <%= f.text_field :position %>
-  </p>
-  <p>
-    <%= f.label :applied_on %><br>
-    <%= f.date_select :applied_on %>
-  </p>
-  <p>
-    <%= f.label :refer %><br>
-    <%= f.text_field :refer %>
-  </p>
-  <p>
-    <%= f.label :found_on %><br>
-    <%= f.date_select :found_on %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<section id="jobform">
+	<% if notice %>
+		<p id="notice"><%= notice %></p>
+	<% end %>
+
+	<%= form_for :application, url: applications_path do |f| %>
+	  <p>I applied at <%= f.text_field :company, :placeholder => "comapny name" %> for the <%= f.text_field :position, :placeholder => "position" %> position on <%= f.date_field :applied_on, :value => Time.now.strftime("%Y-%m-%d") %>.</p>
+	  <p>I heard about it from <%= f.text_field :refer, :placeholder => "someone" %> on <%= f.date_field :found_on, :value => Time.now.strftime("%Y-%m-%d") %>.</p>
+	  <div class="actions">
+	    <%= f.submit "Add New Job" %>
+	  </div>
+	<% end %>
+</section>
+
 <p><%= link_to 'Back', applications_path %></p>
