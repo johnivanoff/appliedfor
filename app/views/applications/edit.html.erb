@@ -1,17 +1,15 @@
-<h1>New Application</h1>
-
 <section id="jobform">
 	<% if notice %>
 		<p id="notice"><%= notice %></p>
 	<% end %>
 
-	<%= form_for :application, url: applications_path do |f| %>
+	<%= form_for :application, url: application_path(@application), method: :patch do |f| %>
 	  <p>I applied at <%= f.text_field :company, :placeholder => "comapny name" %> for the <%= f.text_field :position, :placeholder => "position" %> position on <%= f.date_field :applied_on, :value => Time.now.strftime("%Y-%m-%d") %>.</p>
 	  <p>I heard about it from <%= f.text_field :refer, :placeholder => "someone" %> on <%= f.date_field :found_on, :value => Time.now.strftime("%Y-%m-%d") %>.</p>
 	  <div class="actions">
-	    <%= f.submit "Add New Application" %>
+	    <%= f.submit "Update Application" %>
 	  </div>
 	<% end %>
 </section>
 
-<p><%= link_to 'Back', applications_path %></p>
+<p><%= link_to 'Back', application_path(@application) %></p>

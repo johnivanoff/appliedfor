@@ -12,3 +12,5 @@
 </p>
 <% end %>
 <p><%= link_to 'Back', applications_path %></p>
+<p><%= link_to 'Edit', edit_application_path(@application) %></p>
+<p><%= link_to 'Destroy', application_path(@application), method: :delete, data: { confirm: 'Are you sure?' } %></p>
