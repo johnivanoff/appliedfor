@@ -2,8 +2,8 @@
 <h1>Open Applications</h1>
  <% @applications.each do |application| %>
    <p>
-  <%= link_to application.company, application_path(application) %> for 
-     <%= application.position %> on 
-     <%= application.applied_on %>
+    <%= link_to application.company, application_path(application) %> for 
+    <%= application.position %> on 
+    <%= application.applied_on %>
    </p>
  <% end %>
