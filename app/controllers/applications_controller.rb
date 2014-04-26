@@ -13,6 +13,8 @@ class ApplicationsController < ApplicationController
   
   def create
     @application = Application.new(application_params)
+    @application.user_id = session[:user_id]
+    
     @application.save
     redirect_to @application
   end
@@ -40,7 +42,7 @@ class ApplicationsController < ApplicationController
 
   private
     def application_params
-      params.require(:application).permit(:company, :position, :applied_on, :refer, :found_on)
+      params.require(:application).permit(:company, :position, :applied_on, :refer, :found_on, :user_id)
     end
   
 end
