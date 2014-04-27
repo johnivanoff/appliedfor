@@ -1,7 +1,7 @@
 class ApplicationsController < ApplicationController
   
   def index
-    @applications = Application.theirs(session[:user_id])
+    @applications = Application.theirs(session[:user_id]).order(created_at: :desc)
   end
   
   def show
