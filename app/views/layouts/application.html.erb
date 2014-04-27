@@ -13,7 +13,9 @@
 <body>
 	<% if session[:user_id] %>
 		<%= button_to 'Logout', logout_path, method: :delete   %>
-		<%= link_to "Applications", applications_path %>
+		<% unless controller_name == 'applications' && action_name == 'index' %>
+  		<%= link_to "home", applications_path %>
+		<% end %>
 	<% end %>
 	<% if notice %>
 		<p id="notice"><%= notice %></p>
