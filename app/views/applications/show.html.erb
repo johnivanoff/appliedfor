@@ -19,16 +19,15 @@
 <% @application.notes.each do |note| %>
   <p>
     <%= note.body %>
-	  <%= link_to 'Deelete', [note.application, note],
+	  <%= link_to 'Delete', [note.application, note],
 	               method: :delete,
 	               data: { confirm: 'Are you sure?' } %>
 	</p>
 <% end %>
 
-<h2>Add Note</h2>
 <%= form_for([@application, @application.notes.build]) do |f| %>
   <p>
-    <%= f.label :body %><br>
+    <%= f.label :body, 'Add Note' %><br>
     <%= f.text_area :body %>
   </p>
   <p>

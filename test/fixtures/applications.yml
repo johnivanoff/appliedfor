@@ -6,6 +6,7 @@ one:
   applied_on: 2014-04-20
   refer: MyString
   found_on: 2014-04-20
+  user: one
 
 two:
   company: MyString
@@ -13,3 +14,4 @@ two:
   applied_on: 2014-04-20
   refer: MyString
   found_on: 2014-04-20
+  user: one
