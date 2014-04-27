@@ -1,11 +1,14 @@
 class ApplicationsController < ApplicationController
   
   def index
-    @applications = Application.where('user_id = ?', (session[:user_id]))
+    @applications = Application.theirs(session[:user_id])
   end
   
   def show
-    @application = Application.find(params[:id])
+    @application = Application.find_by(id: params[:id], user_id: session[:user_id])
+    if @application.nil?
+      redirect_to applications_path, notice: 'No such record.'
+    end
   end
   
   def new
