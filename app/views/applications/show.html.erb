@@ -18,11 +18,8 @@
 <h2>Notes</h2>
 <% @application.notes.each do |note| %>
   <p>
-    <strong>Note:</strong>
     <%= note.body %>
-  </p>
-	<p>
-	  <%= link_to 'Destroy Note', [note.application, note],
+	  <%= link_to 'Deelete', [note.application, note],
 	               method: :delete,
 	               data: { confirm: 'Are you sure?' } %>
 	</p>
