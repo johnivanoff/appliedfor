@@ -14,3 +14,27 @@
 <p><%= link_to 'Back', applications_path %></p>
 <p><%= link_to 'Edit', edit_application_path(@application) %></p>
 <p><%= link_to 'Destroy', application_path(@application), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+
+<h2>Notes</h2>
+<% @application.notes.each do |note| %>
+  <p>
+    <strong>Note:</strong>
+    <%= note.body %>
+  </p>
+	<p>
+	  <%= link_to 'Destroy Note', [note.application, note],
+	               method: :delete,
+	               data: { confirm: 'Are you sure?' } %>
+	</p>
+<% end %>
+
+<h2>Add Note</h2>
+<%= form_for([@application, @application.notes.build]) do |f| %>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

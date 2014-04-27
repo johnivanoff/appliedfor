@@ -1,4 +1,5 @@
 class Application < ActiveRecord::Base
   belongs_to :user
-  validates :company, :position, presence: true
+  has_many   :notes, dependent: :destroy
+  validates  :company, :position, presence: true
 end
