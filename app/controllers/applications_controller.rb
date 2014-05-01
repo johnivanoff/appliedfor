@@ -45,7 +45,7 @@ class ApplicationsController < ApplicationController
 
   private
     def application_params
-      params.require(:application).permit(:company, :position, :applied_on, :refer, :found_on, :user_id)
+      params.require(:application).permit(:company, :position, :applied_on, :refer, :found_on, :user_id, :got_job)
     end
   
 end

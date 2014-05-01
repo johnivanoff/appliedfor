@@ -6,6 +6,10 @@
 	<%= form_for :application, url: application_path(@application), method: :patch do |f| %>
 	  <p>I applied at <%= f.text_field :company, :placeholder => "comapny name" %> for the <%= f.text_field :position, :placeholder => "position" %> position on <%= f.date_field :applied_on, :value => Time.now.strftime("%Y-%m-%d") %>.</p>
 	  <p>I heard about it from <%= f.text_field :refer, :placeholder => "someone" %> on <%= f.date_field :found_on, :value => Time.now.strftime("%Y-%m-%d") %>.</p>
+	  <p>
+	    <%= f.check_box :got_job %>
+	    <%= f.label :got_job %>
+	  </p>
 	  <div class="actions">
 	    <%= f.submit "Update Application" %>
 	  </div>
