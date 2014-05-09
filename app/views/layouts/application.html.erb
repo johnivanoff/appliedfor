@@ -20,12 +20,14 @@
   </script>
 </head>
 <body>
-	<% if session[:user_id] %>
-		<%= button_to 'Logout', logout_path, method: :delete   %>
-		<% unless controller_name == 'applications' && action_name == 'index' %>
-  		<%= link_to "home", applications_path %>
-		<% end %>
-	<% end %>
+  <header>
+  	<% if session[:user_id] %>
+  		<%= button_to 'Logout', logout_path, method: :delete   %>
+  		<% unless controller_name == 'applications' && action_name == 'index' %>
+    		<%= link_to "home", applications_path %>
+  		<% end %>
+  	<% end %>
+	</header>
 	<% if notice %>
 		<p id="notice"><%= notice %></p>
 	<% end %>
