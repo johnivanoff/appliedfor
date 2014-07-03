@@ -17,3 +17,5 @@
 
 # Ignore RVM file
 .rvmrc
+
+.powrc
