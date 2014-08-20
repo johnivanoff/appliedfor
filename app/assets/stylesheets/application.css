@@ -83,6 +83,20 @@ strong {
 	font-weight: bold;
 }
 
+header {
+	position: relative;
+}
+header form {
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	display: inline;
+	right: 0;
+}	
+header div {
+		display:inline;
+	}
+
 @media screen and (min-width: 800px) {
   html { font-size: 1.25em; }
 }
