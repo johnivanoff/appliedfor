@@ -1,9 +1,5 @@
-<p><%= link_to 'New application', new_application_path %></p>
+<p><%= link_to 'New application', new_application_path, id: "new_link", remote: true %></p>
 <h1>Open Applications</h1>
- <% @applications.each do |application| %>
-   <p>
-    <%= link_to application.company, application_path(application) %> for 
-    <%= application.position %> on 
-    <%= application.applied_on %>
-   </p>
- <% end %>
+<div id="incomplete_tasks">
+   <%= render @applications %>
+</div>

@@ -19,7 +19,10 @@ class ApplicationsController < ApplicationController
     @application.user_id = session[:user_id]
     
     @application.save
-    redirect_to @application
+    respond_to do |format|
+      format.html { redirect_to @application }
+      format.js
+    end
   end
   
   def edit

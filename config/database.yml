@@ -22,6 +22,7 @@ default: &default
   pool: 5
   username: appliedfor
   password: qaz123
+  port: 5433
 
 development:
   <<: *default
