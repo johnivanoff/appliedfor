@@ -3,3 +3,9 @@
 A little app that keeps track of the jobs you have applied for.  
 
 Available here http://applied-for.herokuapp.com
+
+{<img src="https://codeclimate.com/github/johnivanoff/appliedfor/badges/gpa.svg" />}[https://codeclimate.com/github/johnivanoff/appliedfor]
+
+{<img src="https://codeclimate.com/github/johnivanoff/appliedfor/badges/coverage.svg" />}[https://codeclimate.com/github/johnivanoff/appliedfor/coverage]
+
+{<img src="https://codeclimate.com/github/johnivanoff/appliedfor/badges/issue_count.svg" />}[https://codeclimate.com/github/johnivanoff/appliedfor]
