@@ -43,3 +43,5 @@ gem 'unicorn'
 gem 'rails_12factor', group: :production
 
 gem "codeclimate-test-reporter", group: :test, require: nil
+
+gem 'sqlite3', :group => :test
