@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20140501011704) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "applications", force: true do |t|
+  create_table "applications", force: :cascade do |t|
     t.string   "company"
     t.string   "position"
     t.date     "applied_on"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20140501011704) do
 
   add_index "applications", ["user_id"], name: "index_applications_on_user_id", using: :btree
 
-  create_table "notes", force: true do |t|
+  create_table "notes", force: :cascade do |t|
     t.text     "body"
     t.integer  "application_id"
     t.datetime "created_at"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20140501011704) do
 
   add_index "notes", ["application_id"], name: "index_notes_on_application_id", using: :btree
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at"
