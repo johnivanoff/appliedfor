@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140501011704) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "applications", force: :cascade do |t|
     t.string   "company"
     t.string   "position"
@@ -28,7 +25,7 @@ ActiveRecord::Schema.define(version: 20140501011704) do
     t.boolean  "got_job",    default: false
   end
 
-  add_index "applications", ["user_id"], name: "index_applications_on_user_id", using: :btree
+  add_index "applications", ["user_id"], name: "index_applications_on_user_id"
 
   create_table "notes", force: :cascade do |t|
     t.text     "body"
@@ -37,7 +34,7 @@ ActiveRecord::Schema.define(version: 20140501011704) do
     t.datetime "updated_at"
   end
 
-  add_index "notes", ["application_id"], name: "index_notes_on_application_id", using: :btree
+  add_index "notes", ["application_id"], name: "index_notes_on_application_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
